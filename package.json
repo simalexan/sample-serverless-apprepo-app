@@ -6,7 +6,8 @@
   "scripts": {
     "package": "aws cloudformation package --template-file template.yml --output-template-file output.yml --s3-bucket sample-serverless-apprepo-app",
     "deploy": "aws cloudformation deploy --template-file output.yml --stack-name sample-serverless-apprepo-app --capabilities CAPABILITY_IAM",
-    "qd": "npm run package && npm run deploy"
+    "describe": "aws cloudformation describe-stacks --stack-name sample-serverless-apprepo-app --query Stacks[].Outputs[].OutputValue --output text",
+    "qd": "npm run package && npm run deploy && npm run describe"
   },
   "repository": {
     "type": "git",
