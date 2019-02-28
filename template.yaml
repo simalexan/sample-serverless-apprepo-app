@@ -40,6 +40,9 @@ Resources:
       KeySchema:
         - AttributeName: productId
           KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+      SSESpecification:
+        SSEEnabled: True
 
 Outputs:
   ApiUrl:
